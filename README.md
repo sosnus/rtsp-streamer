@@ -52,3 +52,16 @@ ffmpeg \
 rtsp://localhost:8554/mystream
 
 
+export streamsrv=<adres_ip_lub_hostname_serwera>
+export streamsrv=192.168.1.204
+
+ Could find no file with path './frame%03d.png' and index in the range 0-4
+./frame%03d.png: No such file or directory
+
+/mnt/c/repos/agrobotspl/agro-datasets/frames_timer
+
+ffmpeg -re -f image2 -framerate 25 -i /mnt/c/repos/agrobotspl/agro-datasets/frames_timer/frame%03d.png \
+    -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://localhost:8554/mystream
+
+ffmpeg -re -f image2 -framerate 25 -i /mnt/c/repos/agrobotspl/agro-datasets/frames_timer/frame%03d.jpg \
+    -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://"$streamsrv":8554/mystream

@@ -11,7 +11,7 @@ ffmpeg \
 -preset ultrafast \
 -tune zerolatency \
 -f rtsp \
-rtsp://localhost:8554/stream
-# rtsp://192.168.1.204:8554/stream
+rtsp://192.168.1.161:8554/stream
+# rtsp://localhost:8554/stream
 
 # rtsp://192.168.1.204:8554/stream

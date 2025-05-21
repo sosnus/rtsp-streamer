@@ -1,5 +1,13 @@
-# rtsp-streamer
+# rtsp-streamer (version 2025-05-21)
+## SERVE:
+ffmpeg -re -stream_loop -1 -i ./media/demo.mp4 -c copy -f rtsp rtsp://192.168.1.161:8554/stream
+## RECEIVE:
+ffplay rtsp://192.168.1.161:8554/stream
+
+
  
+# rtsp-streamer OLD
+
 # 1. server
 Run server. execute command:
 ``` bash

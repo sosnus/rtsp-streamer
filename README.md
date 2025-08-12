@@ -1,3 +1,17 @@
+# rtsp-streamer (version 2025-08-12)
+```
+ ffmpeg -re -i ./media/demo.mp4 -c copy -rtsp_transport tcp -f rtsp rtsp://192.168.88.202:8554/mystream
+```
+
+# rtsp-streamer (version 2025-08-11)
+
+ffmpeg -re -i ./media/demo.mp4 -c copy -f rtsp rtsp://192.168.88.202:8554/mystream
+
+ffmpeg -re -i ./media/demo.mp4 -c copy -rtsp_transport tcp -f rtsp rtsp://192.168.88.202:8554/mystream
+
+
+vlc rtsp://192.168.88.202:8554/mystream
+
 # rtsp-streamer (version 2025-05-21)
 ## SERVE:
 ffmpeg -re -stream_loop -1 -i ./media/demo.mp4 -c copy -f rtsp rtsp://192.168.1.161:8554/stream

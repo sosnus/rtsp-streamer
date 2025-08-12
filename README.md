@@ -73,3 +73,24 @@ ffmpeg -re -f image2 -framerate 25 -i /mnt/c/repos/agrobotspl/agro-datasets/fram
 
 ffmpeg -re -f image2 -framerate 25 -i /mnt/c/repos/agrobotspl/agro-datasets/frames_timer/frame%03d.jpg \
     -c:v libx264 -preset ultrafast -tune zerolatency -f rtsp rtsp://"$streamsrv":8554/mystream
+
+
+
+``` yaml
+version: '3.8'
+
+services:
+  rtsp-simple-server:
+    image: bluenviron/mediamtx
+    container_name: rtsp-simple-server
+    environment:
+      RTSP_PROTOCOLS: tcp
+    ports:
+      - "8554:8554"
+      - "1935:1935"
+      - "8888:8888"
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+
+```
